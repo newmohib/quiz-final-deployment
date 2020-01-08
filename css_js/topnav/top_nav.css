@@ -1,0 +1,92 @@
+#navbar {
+  /*background: rgb(245,245,245);*/
+   background-color: #e9ecef;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  transition: top 0.3s;
+  z-index: 1000;
+  height: 60px;
+
+  box-shadow: 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: blue;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 16px;
+  margin-bottom: 5px;
+  opacity: 1;
+  cursor: pointer;
+
+}
+
+#navbar a:hover {
+  color: black;
+  opacity: 0.8;
+}
+
+.side_nav_manu{
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+
+.left_side_nav_manu{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  margin-left: 15px;
+}
+.left_side_nav_manu2{
+   margin-left: 5px;
+}
+
+.right_side_nav_manu{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  text-decoration: none;
+  font-size: 17px;
+  margin-right: 10px;
+}
+.right_side_nav_manu2{
+   margin-right: 5px;
+}
+
+.span_left_margin{
+  margin-left: 5px;
+}
+
+.span_right_margin{
+  margin-right: : 5px;
+}
+.icon_font_10{
+  font-size: 10px;
+}
+.icon_font_20{
+  font-size: 20px;
+}
+
+.icon_font_25{
+  font-size: 25px;
+}
+
+.icon_font_30{
+  font-size: 30px;
+}

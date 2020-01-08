@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	   <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+	   <script src="facebook_login/login.js"></script>
+</head>
+<body>
+	<div style="width: 200px;" class="fb-login-button" data-size="large" onlogin="checkLogout()" data-button-type="login_with">Logout</div>
+
+
+	<script type="text/javascript">
+		var queryString=new URLSearchParams(window.location.search);
+		var userId=queryString.get('userId');
+		//document.write(userId +'<br>');
+
+		  // var AllQuestions=localStorage.getItem("questions");
+    //       var dataParse=JSON.parse(AllQuestions);
+    //       //var currentQuestion = _.find(dataParse,{id:questionId});
+    //       var selectedAns=currentQuestion.selected;
+
+        		localStorage.setItem("userId",JSON.stringify(userId));
+        	 	var AllQuestions=localStorage.getItem("userId");
+            var dataParse=JSON.parse(AllQuestions);
+            var errorMessage='Please Try Again later';
+           
+           if (localStorage.userId) {
+           	window.location.replace("question.html?userId="+userId);
+           }else{
+           	window.location.replace("index.html?error="+errorMessage);
+           }
+	</script>
+</body>
+</html>

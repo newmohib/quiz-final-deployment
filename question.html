@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Quiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+
+     <!-- topnav -->
+    <link rel="stylesheet" href="css_js/topnav/top_nav.css">
+    <!-- sidebar -->
+    <link rel="stylesheet" href="css_js/sidebar/style3.css">
+    <link rel="stylesheet" href="css_js/sidebar/jquery.mCustomScrollbar.min.css">
+ 
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="font/css/all.css">
+    <!--container css-->
+    <link rel="stylesheet" href="css_js/continer/container_css.css">
+    <link rel="stylesheet" href="css_js/continer/floating-labels.CSS">
+    <!--for facebook Login-->
+     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+     <script src="facebook_login/login.js"></script>
+
+</head>
+
+<body class="body_background">
+<!--sidenav-->     
+<div class="wrapper">
+    <nav id="sidebar">
+        <div id="dismiss">
+           <h2> <i class="fas fa-times"></i></h2>
+        </div>
+
+        <div class="sidebar-header">
+         <div class="container">
+            <div class="row justify-content-center">
+                <div class="">
+                    <h4>Mohib</h4>
+                </div>
+            </div>
+         </div>  
+        </div>
+            <ul class="list-unstyled components">
+                <p>Menue</p>
+                <li>
+                    <a href="/" class="sidebar_manu_icon_change">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#aboutsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">About<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="aboutsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#skilsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">Skiles<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="skilsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Contact</a>
+                </li>
+            </ul>
+    </nav>
+</div>
+<!-- overlay is use for when sidebar is active -->
+<div class="overlay"></div>
+<!-- Sidebar  closs-->
+                <div id="navbar">
+                <div class="side_nav_manu">
+                    <div class="side_nav_manu">
+                        <div class="left_side_nav_manu">
+                            <div class="row">
+                                <div class="left_side_nav_manu2">
+                                    <a  id="sidebarCollapse" ><i class="fas fa-align-justify icon_font_30"></i></a>
+                                </div>
+                                <div class="left_side_nav_manu2">
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_side_nav_manu">
+                            <div class="row">
+                                <div class="right_side_nav_manu2">
+                                    <strong><a href="index.html"></a></strong>
+                                </div>
+                                <div class="right_side_nav_manu2">
+                                    <div style="width: 120px; margin-top: 5px;" class="fb-login-button" data-size="medium" onlogin="checkLogout()" data-button-type="login_with">Logout</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+<!-- top nav closs-->
+
+
+<!--content start-->
+    <div class="flax-view">
+      <div class="text-left mb-12">
+        <!--container-->
+    <div class="container container_margin_100 body_card">
+                <div class="row justify-content-center  out_box_shodow_container ">
+                    <div class="col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 col_padding_5 ">
+                    <div class="container">
+                      <div class="header_new">
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+                                <p>
+                                    <a id="timeEvent" onclick="pauseTimer()" class="btn btn-light border_radius_50 icon_margin_r"><span ><i id="timePause" class="fas fa-pause"></i></span></a>
+                                    <strong class="timer">00:00
+                                        <!--time-->
+                                    <!-- <div id="timerContainer">
+                                    <div id="remainingTime" class="timer" >00:00</div>
+                                    <div class="startTimer reset">
+                                          <i class="fas fa-play"></i>
+                                    </div>
+                                    <i class="fas fa-pause"></i>
+                                    <div class="pauseTimer reset">
+                                         
+                                    </div>
+                                    </div> -->
+                                        <!--time-->
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <p>
+                                 <button id="submitButton" onclick="submitAnswers()" class="btn btn-light button_width_120 active"><strong>SUBMIT</strong></button> 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row text-right" style="overflow-x: auto;">
+                                <div class="col question_number_padding">
+                                    <div class="scrolling-wrapper">
+                                            <div  class="card"><button  id="0" onclick="individualQuestion('0')" class="remove_active_btn btn btn-light border_radius_50">01</button></div>
+                                            <div  class="card"><button id="1" onclick="individualQuestion('1')" class="btn btn-light border_radius_50">02</button></div>
+                                            <div  class="card"><button id="2" onclick="individualQuestion('2')" class="btn btn-light border_radius_50">03</button></div>
+                                            <div  class="card"><button id="3" onclick="individualQuestion('3')" class="btn btn-light border_radius_50">04</button></div>
+                                            <div  class="card"><button id="4" onclick="individualQuestion('4')" class="btn btn-light border_radius_50">05</button></div>
+                                            <div  class="card"><button id="5" onclick="individualQuestion('5')" class="btn btn-light border_radius_50">06</button></div>
+                                            <div class="card"><button id="6" onclick="individualQuestion('6')" class="btn btn-light border_radius_50">07</button></div>
+                                            <div  class="card"><button id="7"  onclick="individualQuestion('7')" class="btn btn-light border_radius_50">08</button></div>
+                                            <div  class="card"><button id="8" onclick="individualQuestion('8')" class="btn btn-light border_radius_50">09</button></div>
+                                            <div  class="card"><button id="9" onclick="individualQuestion('9')" class="btn btn-light border_radius_50">10</button></div>  
+                                    </div>
+                                </div>
+                        </div>
+                     </div>
+                     <!--header closs-->
+                     <!--body start-->
+                     <div class="col_padding_10">
+                        <div class="row">
+                            <div class="col-auto mr-auto" style="margin-left: 10px;">
+                                <p>
+                                    <strong class="timerSingle">00:00
+                                        <!--time view-->
+                                     <div id="timerContainer">
+                                        <div class="timerSingle"></div>
+                                        <div class="startTimer ">
+                                        </div>
+                                        <div class="pauseTimer ">
+                                             
+                                           </div>
+                                        <div class="resetTimer "></div>
+
+                                    </div>
+                                    </strong>
+                                </p>
+                            </div>
+                            <div class="col-auto">
+                                <p>
+                                    <button style="color: black" id="reviewButton" onclick="remarkQuestion()" class="btn btn-light button_width_120"><strong>Remark</strong> </button> 
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-auto mr-auto question_row">
+                               <strong id="questionHead" >
+                                <!--here  puestions-->
+                                  
+                               </strong> 
+                            </div>
+                        </div>
+                        <form name="quiz_answer_form" id="formForMultipleChoice">
+                            <!--multiple chice here-->
+                            <!--this use for function and question length here-->
+                            <div id="questionNumberSet" style="display: none"></div>
+                        <div id="multipleChoice"></div>
+                        </form>
+                        <div class="row">
+                            <div class="col-md-12 ">
+                                <p class="report_on_issue">
+                                  <span class="right_span_icon"><i class="fas fa-exclamation-triangle"></i></span><a href="#">Report an Issue</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                                <div class="col-auto mr-auto">
+                                    <p>
+                                        <button style="color: black" id="PreviousQuestionButton" onclick="previusQuestion()" class="btn btn-light button_width_120"><span class="right_span_icon"><i class="fas fa-angle-left"></i></span><strong>Previous</strong></button>
+                                        
+                                    </p>
+                                </div>
+                                <div class="col-auto">
+                                    <p>
+                                     <button style="color: black" id="nextQuestionButton" onclick="nextQuestion()" class="btn btn-light button_width_120 "><strong>Next</strong> <span class="left_span_icon"><i class="fas fa-angle-right"></i></span></button> 
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+                    <!--body start-->
+                    </div>
+   
+                    </div>
+                </div>
+                <!---->
+
+        </div>
+        <!--container-->
+        
+   </div>
+<!--content closs-->
+
+    <script src="bootstrap/js/jquery-3.3.1.js"></script>
+    <!-- Popper.JS -->
+    <script src="bootstrap/js/popper.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <!--top js-->
+    <script src="css_js/topnav/top_nav.js"></script>
+    <!--sidebar js-->
+    <script src="css_js/sidebar/sidebar.js"></script>
+    <script src="css_js/sidebar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--for question jason data-->
+    <script type="text/javascript" src="css_js/lodash/lodash.js"></script>
+    <script type="text/javascript" src="jasonData/jasonData.js"></script>
+    <script type="text/javascript" src="lib/historyStore.js"></script>
+    <script type="text/javascript" src="lib/questions.js"></script>
+    <script type="text/javascript" src="lib/time.js"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function() {
+  $('.sidebar_manu_icon_change').on('click', function() {
+
+    $("i", this).toggleClass("fa-caret-up");
+   $('.sidebar_manu_icon_change').not(this).find("i").removeClass("fa-caret-up").addClass("fa-caret-down");
+    //$(this).find("i").removeClass("fa-angle-double-down").addClass("fa-angle-double-down");
+    //$('.fa-angle-double-down').removeClass("red");
+    $('.list-unstyled').not(this).removeClass("show");
+    
+});
+
+});
+    </script>
+</body>
+
+</html>

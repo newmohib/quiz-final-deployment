@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Quiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+
+     <!-- topnav -->
+    <link rel="stylesheet" href="css_js/topnav/top_nav.css">
+    <!-- sidebar -->
+    <link rel="stylesheet" href="css_js/sidebar/style3.css">
+    <link rel="stylesheet" href="css_js/sidebar/jquery.mCustomScrollbar.min.css">
+ 
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="font/css/all.css">
+    <!--container css-->
+    <link rel="stylesheet" href="css_js/pie_chart/pie_chart.css">
+    <link rel="stylesheet" href="css_js/continer/container_css.css">
+    <link rel="stylesheet" href="css_js/continer/floating-labels.CSS">
+    <!--for facebook Login-->
+     <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+     <script src="facebook_login/login.js"></script>
+
+</head>
+
+<body class="body_background">
+
+<!--sidenav-->     
+<div class="wrapper">
+    <nav id="sidebar">
+        <div id="dismiss">
+           <h2> <i class="fas fa-times"></i></h2>
+        </div>
+
+        <div class="sidebar-header">
+         <div class="container">
+            <div class="row justify-content-center">
+                <div class="">
+                    <h4>Mohib</h4>
+                </div>
+            </div>
+         </div>  
+        </div>
+            <ul class="list-unstyled components">
+                <p>Menue</p>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#aboutsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">About<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="aboutsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#skilsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">Skiles<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="skilsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Contact</a>
+                </li>
+            </ul>
+    </nav>
+</div>
+<!-- overlay is use for when sidebar is active -->
+<div class="overlay"></div>
+<!-- Sidebar  closs-->
+                <div id="navbar">
+                <div class="side_nav_manu">
+                    <div class="side_nav_manu">
+                        <div class="left_side_nav_manu">
+                            <div class="row">
+                                <div class="left_side_nav_manu2">
+                                    <a  id="sidebarCollapse" ><i class="fas fa-align-justify icon_font_30"></i></a>
+                                </div>
+                                <div class="left_side_nav_manu2">
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_side_nav_manu">
+                            <div class="row">
+                                <div class="right_side_nav_manu2">
+                                    <strong><a href="index.html"></a></strong>
+                                </div>
+                                <div class="right_side_nav_manu2">
+                                    <div style="width: 120px; margin-top: 5px;" class="fb-login-button" data-size="medium" onlogin="checkLogout()" data-button-type="login_with">Logout</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+<!-- top nav closs-->
+
+
+<!--content start-->
+<div class="flax-view">
+ <div class="text-center mb-12">
+  <!--container-->
+  <div class="container container_margin_100 body_card">
+    <div class="row justify-content-center  out_box_shodow_container" >
+                    <div class="col-12 col_padding_5 ">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-8 mr-auto text-left">
+                                <p><h2>Highlights</h2></p>
+                                <p><h5>Performance: Learn</h5></p>
+                            </div>
+                            <div class="col-auto order-11">
+                                <p><h2>Logo</h2></p>
+                            </div>
+                        </div><hr>
+                        <div class="row">
+                            <div class="col-auto ">
+                                <p> <h5>Score and Solutions</h5></p>
+                            </div>  
+                        </div>
+                        <div class="row justify-content-center row_margin_bottom_20">
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <div id="scoreNumbersForChart" class="chart" style="--value: 60%;">
+                                    <p id="scorePercentage" class="pie_result">60%</p>
+                                 </div>
+                                 <p style="margin-top: 20px;"><strong>Correct</strong></p>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <div id="averageScore" class="chart" style="--value: 60%;">
+                                    <p id="averageScoreValue" class="pie_result">60%</p>
+                                 </div>
+                                 <p style="margin-top: 20px;"><strong>Average Score</strong></p>
+                            </div>
+                            <div class="col-6 col-sm-6 col-md-3 col-lg-3">
+                                <div id="averageTime" class="chart" style="--value: 60%;">
+                                    <p id="averageTimeValue" class="pie_result">60%</p>
+                                 </div>
+                                 <p style="margin-top: 20px;"><strong>Average Time</strong></p>
+                            </div>
+                            <div style="padding-right: 0px; padding-left: 30px; box-sizing: border-box;" class="col-6 col-sm-6 col-md-3 col-lg-3 text-left">
+                                <p class="p_custom"><a  href="#"><span class="icon_margin_r" ><i class="fas fa-check"></i></span>
+                                    <!--Correct-->
+                                    <span id="correctNumbers"></span>
+                                </a></p> 
+                                <!-- <hr class="hr_scorecard_answer"> -->
+
+                                <p class="p_custom"><a href="#" ><span class="icon_margin_r"><i class="fas fa-times"></i></span>  
+                                    <!--Incorrect-->
+                                    <span id="IncorrectNumbers"></span>
+                                </a></p>
+                                <!-- <hr class="hr_scorecard_answer"> -->
+                                <p class="p_custom"><a href="#" ><span class="icon_margin_r"><i class="fas fa-angle-double-right"></i></span>
+                                    <!--unanswered-->
+                                    <span id="unansweredNumbers"></span>
+                                </a></p>
+                                <!-- <hr class="hr_scorecard_answer"> -->
+                                <p class="margin_top_35"><strong>Total Question</strong></p>
+                            </div>
+                        </div>
+                        <div class="row justify-content-center ">
+                            <div col-12>
+                                <a href="solutions.html" class="btn btn-light color_tomato"><strong>View Solution</strong></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-auto mr-auto">
+                                <p> <h5>Statistics</h5></p>
+                            </div>      
+                        </div>
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-md-12 col-lg-10">
+                                            <canvas id="acuracy"></canvas>
+                                            <div class="chart_head">
+                                                <p> <strong>Accuracy</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-12 col-md-12 col-lg-12">
+                                            <canvas height="250" id="indivitufal_score"></canvas>
+                                            <div class="chart_head">
+                                                <p> <strong>Score</strong></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                               
+                            </div>
+                        </div>
+                        <div class="row justify-content-center ">
+                            <div col-12>
+                                <a href="historyView.html" class="btn btn-light color_tomato"><strong>View Statistics</strong></a>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                                <div class="col-auto mr-auto">
+                                    <p>
+                                        <a class="btn btn-light button_width_120"><span class="right_span_icon"><i class="fas fa-angle-left"></i></span><strong>Back</strong> </a>
+                                        
+                                    </p>
+                                </div>
+                                <div class="col-auto mr-auto">
+                                    <p><a href="question.html" style="color: black" id="nextQuestionButton" onclick="nextQuestion()" class="btn btn-light"><strong>Again Test</strong></a></p>
+                                </div>
+                                <div class="col-auto">
+                                    <p>
+                                     <a href="solutions.html" class="btn btn-light button_width_120"><strong>Next</strong> <span class="left_span_icon"><i class="fas fa-angle-right"></i></span>
+                                     </a> 
+                                    </p>
+                                </div>
+                        </div>
+                    </div>
+   
+                    </div>
+                </div>
+
+
+  </div>
+  <!--container-->
+ </div>
+</div>
+<!--content closs-->  
+    <script src="bootstrap/js/jquery-3.3.1.js"></script>
+    <!-- Popper.JS -->
+    <script src="bootstrap/js/popper.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <!--top js-->
+    <script src="css_js/topnav/top_nav.js"></script>
+    <!--sidebar js-->
+    <script src="css_js/sidebar/sidebar.js"></script>
+    <script src="css_js/sidebar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+    <!--chart-->
+    <script type="text/javascript" src="css_js/lodash/lodash.js"></script>
+    <script type="text/javascript" src="lib/scorecard.js"></script>
+    <script type="text/javascript" src="chart/chart.min.js"></script>
+    <script type="text/javascript" src="chart/chart_lib.js"></script>
+    <!-- <script type="text/javascript" src="Chart.js"></script> -->
+
+    <script type="text/javascript">
+        $(function() {
+  $('.sidebar_manu_icon_change').on('click', function() {
+
+    $("i", this).toggleClass("fa-caret-up");
+   $('.sidebar_manu_icon_change').not(this).find("i").removeClass("fa-caret-up").addClass("fa-caret-down");
+    //$(this).find("i").removeClass("fa-angle-double-down").addClass("fa-angle-double-down");
+    //$('.fa-angle-double-down').removeClass("red");
+    $('.list-unstyled').not(this).removeClass("show");
+    
+});
+
+});
+    </script>
+</body>
+
+</html>

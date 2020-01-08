@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Quiz</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    
+
+     <!-- topnav -->
+    <link rel="stylesheet" href="css_js/topnav/top_nav.css">
+    <!-- sidebar -->
+    <link rel="stylesheet" href="css_js/sidebar/style3.css">
+    <link rel="stylesheet" href="css_js/sidebar/jquery.mCustomScrollbar.min.css">
+ 
+    <!-- Font Awesome JS -->
+    <link rel="stylesheet" href="font/css/all.css">
+    <!--container css-->
+    <link rel="stylesheet" href="css_js/pie_chart/pie_chart.css">
+    <link rel="stylesheet" href="css_js/continer/container_css.css">
+    <link rel="stylesheet" href="css_js/continer/floating-labels.CSS">
+    <script src="../../facebook.js"></script>
+
+</head>
+
+<body>
+
+<!--sidenav-->     
+<div class="wrapper">
+    <nav id="sidebar">
+        <div id="dismiss">
+           <h2> <i class="fas fa-times"></i></h2>
+        </div>
+
+        <div class="sidebar-header">
+         <div class="container">
+            <div class="row justify-content-center">
+                <div class="">
+                    <h4>Mohib</h4>
+                </div>
+            </div>
+         </div>  
+        </div>
+            <ul class="list-unstyled components">
+                <p>Menue</p>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Home</a>
+                </li>
+                <li class="active">
+                    <a href="#aboutsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">About<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="aboutsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="active">
+                    <a href="#skilsub" data-toggle="collapse" aria-expanded="false" class="sidebar_manu_icon_change">Skiles<span class="sidebar_manu_icon"><i class="fas fa-caret-down"></i></span></a>
+                    <ul class="collapse list-unstyled" id="skilsub">
+                        <li>
+                            <a href="index2.html">Basic</a>
+                        </li>
+                        <li>
+                            <a href="#">Skiles</a>
+                        </li>
+                        <li>
+                            <a href="#">Work</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Portfolio</a>
+                </li>
+                <li>
+                    <a href="#" class="sidebar_manu_icon_change">Contact</a>
+                </li>
+            </ul>
+    </nav>
+</div>
+<!-- overlay is use for when sidebar is active -->
+<div class="overlay"></div>
+<!-- Sidebar  closs-->
+                <div id="navbar">
+                <div class="side_nav_manu">
+                    <div class="side_nav_manu">
+                        <div class="left_side_nav_manu">
+                            <div class="row">
+                                <div class="left_side_nav_manu2">
+                                    <a  id="sidebarCollapse" ><i class="fas fa-align-justify icon_font_30"></i></a>
+                                </div>
+                                <div class="left_side_nav_manu2">
+                                    <a class=""></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_side_nav_manu">
+                            <div class="row">
+                                <div class="right_side_nav_manu2">
+                                    <strong><a href="#news">Logout</a></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div>
+<!-- top nav closs-->
+
+
+<!--content start-->
+<div class="flax-view">
+ <div class="text-center mb-12">
+  <!--container-->
+  <div class="container container_margin_100">
+
+
+
+  </div>
+  <!--container-->
+ </div>
+</div>
+<!--content closs-->  
+    <script src="bootstrap/js/jquery-3.3.1.js"></script>
+    <!-- Popper.JS -->
+    <script src="bootstrap/js/popper.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <!--top js-->
+    <script src="css_js/topnav/top_nav.js"></script>
+    <!--sidebar js-->
+    <script src="css_js/sidebar/sidebar.js"></script>
+    <script src="css_js/sidebar/jquery.mCustomScrollbar.concat.min.js"></script>
+
+
+
+
+
+    <script type="text/javascript">
+        $(function() {
+  $('.sidebar_manu_icon_change').on('click', function() {
+
+    $("i", this).toggleClass("fa-caret-up");
+   $('.sidebar_manu_icon_change').not(this).find("i").removeClass("fa-caret-up").addClass("fa-caret-down");
+    //$(this).find("i").removeClass("fa-angle-double-down").addClass("fa-angle-double-down");
+    //$('.fa-angle-double-down').removeClass("red");
+    $('.list-unstyled').not(this).removeClass("show");
+    
+});
+
+});
+    </script>
+</body>
+
+</html>

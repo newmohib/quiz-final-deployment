@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	   <script src="https://sdk.accountkit.com/en_US/sdk.js"></script>
+	   <script src="facebook_login/login.js"></script>
+</head>
+<body>
+	<h1>I am Home </h1>
+	<div style="width: 200px;" class="fb-login-button" data-size="large" onlogin="checkLogout()" data-button-type="login_with">Logout</div>
+
+
+	<script type="text/javascript">
+		var user1=new URLSearchParams(window.location.search);
+		var user2=user1.get('userId');
+		document.write(user2);
+	</script>
+</body>
+</html>
